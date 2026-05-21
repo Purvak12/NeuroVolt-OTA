@@ -116,6 +116,115 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named NeuroVoltOTA
+
+# Build rule for target.
+NeuroVoltOTA: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NeuroVoltOTA
+.PHONY : NeuroVoltOTA
+
+# fast build rule for target.
+NeuroVoltOTA/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/build
+.PHONY : NeuroVoltOTA/fast
+
+src/agents/ThermalAgent.o: src/agents/ThermalAgent.cpp.o
+.PHONY : src/agents/ThermalAgent.o
+
+# target to build an object file
+src/agents/ThermalAgent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/ThermalAgent.cpp.o
+.PHONY : src/agents/ThermalAgent.cpp.o
+
+src/agents/ThermalAgent.i: src/agents/ThermalAgent.cpp.i
+.PHONY : src/agents/ThermalAgent.i
+
+# target to preprocess a source file
+src/agents/ThermalAgent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/ThermalAgent.cpp.i
+.PHONY : src/agents/ThermalAgent.cpp.i
+
+src/agents/ThermalAgent.s: src/agents/ThermalAgent.cpp.s
+.PHONY : src/agents/ThermalAgent.s
+
+# target to generate assembly for a file
+src/agents/ThermalAgent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/ThermalAgent.cpp.s
+.PHONY : src/agents/ThermalAgent.cpp.s
+
+src/can/CANManager.o: src/can/CANManager.cpp.o
+.PHONY : src/can/CANManager.o
+
+# target to build an object file
+src/can/CANManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/can/CANManager.cpp.o
+.PHONY : src/can/CANManager.cpp.o
+
+src/can/CANManager.i: src/can/CANManager.cpp.i
+.PHONY : src/can/CANManager.i
+
+# target to preprocess a source file
+src/can/CANManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/can/CANManager.cpp.i
+.PHONY : src/can/CANManager.cpp.i
+
+src/can/CANManager.s: src/can/CANManager.cpp.s
+.PHONY : src/can/CANManager.s
+
+# target to generate assembly for a file
+src/can/CANManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/can/CANManager.cpp.s
+.PHONY : src/can/CANManager.cpp.s
+
+src/ecu/BMS_ECU.o: src/ecu/BMS_ECU.cpp.o
+.PHONY : src/ecu/BMS_ECU.o
+
+# target to build an object file
+src/ecu/BMS_ECU.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ecu/BMS_ECU.cpp.o
+.PHONY : src/ecu/BMS_ECU.cpp.o
+
+src/ecu/BMS_ECU.i: src/ecu/BMS_ECU.cpp.i
+.PHONY : src/ecu/BMS_ECU.i
+
+# target to preprocess a source file
+src/ecu/BMS_ECU.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ecu/BMS_ECU.cpp.i
+.PHONY : src/ecu/BMS_ECU.cpp.i
+
+src/ecu/BMS_ECU.s: src/ecu/BMS_ECU.cpp.s
+.PHONY : src/ecu/BMS_ECU.s
+
+# target to generate assembly for a file
+src/ecu/BMS_ECU.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ecu/BMS_ECU.cpp.s
+.PHONY : src/ecu/BMS_ECU.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +233,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... NeuroVoltOTA"
+	@echo "... src/agents/ThermalAgent.o"
+	@echo "... src/agents/ThermalAgent.i"
+	@echo "... src/agents/ThermalAgent.s"
+	@echo "... src/can/CANManager.o"
+	@echo "... src/can/CANManager.i"
+	@echo "... src/can/CANManager.s"
+	@echo "... src/ecu/BMS_ECU.o"
+	@echo "... src/ecu/BMS_ECU.i"
+	@echo "... src/ecu/BMS_ECU.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
