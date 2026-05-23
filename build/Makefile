@@ -129,6 +129,30 @@ NeuroVoltOTA/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/build
 .PHONY : NeuroVoltOTA/fast
 
+src/agents/MotorAgent.o: src/agents/MotorAgent.cpp.o
+.PHONY : src/agents/MotorAgent.o
+
+# target to build an object file
+src/agents/MotorAgent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/MotorAgent.cpp.o
+.PHONY : src/agents/MotorAgent.cpp.o
+
+src/agents/MotorAgent.i: src/agents/MotorAgent.cpp.i
+.PHONY : src/agents/MotorAgent.i
+
+# target to preprocess a source file
+src/agents/MotorAgent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/MotorAgent.cpp.i
+.PHONY : src/agents/MotorAgent.cpp.i
+
+src/agents/MotorAgent.s: src/agents/MotorAgent.cpp.s
+.PHONY : src/agents/MotorAgent.s
+
+# target to generate assembly for a file
+src/agents/MotorAgent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/MotorAgent.cpp.s
+.PHONY : src/agents/MotorAgent.cpp.s
+
 src/agents/ThermalAgent.o: src/agents/ThermalAgent.cpp.o
 .PHONY : src/agents/ThermalAgent.o
 
@@ -152,6 +176,78 @@ src/agents/ThermalAgent.s: src/agents/ThermalAgent.cpp.s
 src/agents/ThermalAgent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/ThermalAgent.cpp.s
 .PHONY : src/agents/ThermalAgent.cpp.s
+
+src/agents/VehicleOrchestrator.o: src/agents/VehicleOrchestrator.cpp.o
+.PHONY : src/agents/VehicleOrchestrator.o
+
+# target to build an object file
+src/agents/VehicleOrchestrator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/VehicleOrchestrator.cpp.o
+.PHONY : src/agents/VehicleOrchestrator.cpp.o
+
+src/agents/VehicleOrchestrator.i: src/agents/VehicleOrchestrator.cpp.i
+.PHONY : src/agents/VehicleOrchestrator.i
+
+# target to preprocess a source file
+src/agents/VehicleOrchestrator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/VehicleOrchestrator.cpp.i
+.PHONY : src/agents/VehicleOrchestrator.cpp.i
+
+src/agents/VehicleOrchestrator.s: src/agents/VehicleOrchestrator.cpp.s
+.PHONY : src/agents/VehicleOrchestrator.s
+
+# target to generate assembly for a file
+src/agents/VehicleOrchestrator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/VehicleOrchestrator.cpp.s
+.PHONY : src/agents/VehicleOrchestrator.cpp.s
+
+src/analytics/TelemetryLogger.o: src/analytics/TelemetryLogger.cpp.o
+.PHONY : src/analytics/TelemetryLogger.o
+
+# target to build an object file
+src/analytics/TelemetryLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/analytics/TelemetryLogger.cpp.o
+.PHONY : src/analytics/TelemetryLogger.cpp.o
+
+src/analytics/TelemetryLogger.i: src/analytics/TelemetryLogger.cpp.i
+.PHONY : src/analytics/TelemetryLogger.i
+
+# target to preprocess a source file
+src/analytics/TelemetryLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/analytics/TelemetryLogger.cpp.i
+.PHONY : src/analytics/TelemetryLogger.cpp.i
+
+src/analytics/TelemetryLogger.s: src/analytics/TelemetryLogger.cpp.s
+.PHONY : src/analytics/TelemetryLogger.s
+
+# target to generate assembly for a file
+src/analytics/TelemetryLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/analytics/TelemetryLogger.cpp.s
+.PHONY : src/analytics/TelemetryLogger.cpp.s
+
+src/analytics/TelemetryStore.o: src/analytics/TelemetryStore.cpp.o
+.PHONY : src/analytics/TelemetryStore.o
+
+# target to build an object file
+src/analytics/TelemetryStore.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/analytics/TelemetryStore.cpp.o
+.PHONY : src/analytics/TelemetryStore.cpp.o
+
+src/analytics/TelemetryStore.i: src/analytics/TelemetryStore.cpp.i
+.PHONY : src/analytics/TelemetryStore.i
+
+# target to preprocess a source file
+src/analytics/TelemetryStore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/analytics/TelemetryStore.cpp.i
+.PHONY : src/analytics/TelemetryStore.cpp.i
+
+src/analytics/TelemetryStore.s: src/analytics/TelemetryStore.cpp.s
+.PHONY : src/analytics/TelemetryStore.s
+
+# target to generate assembly for a file
+src/analytics/TelemetryStore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/analytics/TelemetryStore.cpp.s
+.PHONY : src/analytics/TelemetryStore.cpp.s
 
 src/can/CANManager.o: src/can/CANManager.cpp.o
 .PHONY : src/can/CANManager.o
@@ -201,6 +297,54 @@ src/ecu/BMS_ECU.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ecu/BMS_ECU.cpp.s
 .PHONY : src/ecu/BMS_ECU.cpp.s
 
+src/ecu/MotorECU.o: src/ecu/MotorECU.cpp.o
+.PHONY : src/ecu/MotorECU.o
+
+# target to build an object file
+src/ecu/MotorECU.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ecu/MotorECU.cpp.o
+.PHONY : src/ecu/MotorECU.cpp.o
+
+src/ecu/MotorECU.i: src/ecu/MotorECU.cpp.i
+.PHONY : src/ecu/MotorECU.i
+
+# target to preprocess a source file
+src/ecu/MotorECU.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ecu/MotorECU.cpp.i
+.PHONY : src/ecu/MotorECU.cpp.i
+
+src/ecu/MotorECU.s: src/ecu/MotorECU.cpp.s
+.PHONY : src/ecu/MotorECU.s
+
+# target to generate assembly for a file
+src/ecu/MotorECU.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ecu/MotorECU.cpp.s
+.PHONY : src/ecu/MotorECU.cpp.s
+
+src/events/EventManager.o: src/events/EventManager.cpp.o
+.PHONY : src/events/EventManager.o
+
+# target to build an object file
+src/events/EventManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/events/EventManager.cpp.o
+.PHONY : src/events/EventManager.cpp.o
+
+src/events/EventManager.i: src/events/EventManager.cpp.i
+.PHONY : src/events/EventManager.i
+
+# target to preprocess a source file
+src/events/EventManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/events/EventManager.cpp.i
+.PHONY : src/events/EventManager.cpp.i
+
+src/events/EventManager.s: src/events/EventManager.cpp.s
+.PHONY : src/events/EventManager.s
+
+# target to generate assembly for a file
+src/events/EventManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/events/EventManager.cpp.s
+.PHONY : src/events/EventManager.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -225,6 +369,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/ota/OTAManager.o: src/ota/OTAManager.cpp.o
+.PHONY : src/ota/OTAManager.o
+
+# target to build an object file
+src/ota/OTAManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTAManager.cpp.o
+.PHONY : src/ota/OTAManager.cpp.o
+
+src/ota/OTAManager.i: src/ota/OTAManager.cpp.i
+.PHONY : src/ota/OTAManager.i
+
+# target to preprocess a source file
+src/ota/OTAManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTAManager.cpp.i
+.PHONY : src/ota/OTAManager.cpp.i
+
+src/ota/OTAManager.s: src/ota/OTAManager.cpp.s
+.PHONY : src/ota/OTAManager.s
+
+# target to generate assembly for a file
+src/ota/OTAManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTAManager.cpp.s
+.PHONY : src/ota/OTAManager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,18 +402,39 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... NeuroVoltOTA"
+	@echo "... src/agents/MotorAgent.o"
+	@echo "... src/agents/MotorAgent.i"
+	@echo "... src/agents/MotorAgent.s"
 	@echo "... src/agents/ThermalAgent.o"
 	@echo "... src/agents/ThermalAgent.i"
 	@echo "... src/agents/ThermalAgent.s"
+	@echo "... src/agents/VehicleOrchestrator.o"
+	@echo "... src/agents/VehicleOrchestrator.i"
+	@echo "... src/agents/VehicleOrchestrator.s"
+	@echo "... src/analytics/TelemetryLogger.o"
+	@echo "... src/analytics/TelemetryLogger.i"
+	@echo "... src/analytics/TelemetryLogger.s"
+	@echo "... src/analytics/TelemetryStore.o"
+	@echo "... src/analytics/TelemetryStore.i"
+	@echo "... src/analytics/TelemetryStore.s"
 	@echo "... src/can/CANManager.o"
 	@echo "... src/can/CANManager.i"
 	@echo "... src/can/CANManager.s"
 	@echo "... src/ecu/BMS_ECU.o"
 	@echo "... src/ecu/BMS_ECU.i"
 	@echo "... src/ecu/BMS_ECU.s"
+	@echo "... src/ecu/MotorECU.o"
+	@echo "... src/ecu/MotorECU.i"
+	@echo "... src/ecu/MotorECU.s"
+	@echo "... src/events/EventManager.o"
+	@echo "... src/events/EventManager.i"
+	@echo "... src/events/EventManager.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/ota/OTAManager.o"
+	@echo "... src/ota/OTAManager.i"
+	@echo "... src/ota/OTAManager.s"
 .PHONY : help
 
 

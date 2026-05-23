@@ -1,4 +1,8 @@
 build/
+venv/
 .vscode/
 *.o
 *.out
+telemetry.json
+telemetry.txt
+events.log

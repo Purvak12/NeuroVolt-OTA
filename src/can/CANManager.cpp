@@ -1,181 +1,213 @@
 #include "../../include/can/CANManager.hpp"
+
 #include "../../include/agents/ThermalAgent.hpp"
+#include "../../include/agents/MotorAgent.hpp"
+#include "../../include/agents/VehicleOrchestrator.hpp"
 
 #include <iostream>
 #include <cstring>
-#include <string>
 
 #include <unistd.h>
-#include <net/if.h>
-#include <sys/ioctl.h>
+
 #include <sys/socket.h>
 
 #include <linux/can.h>
 #include <linux/can/raw.h>
 
+#include <net/if.h>
+
+#include <sys/ioctl.h>
+
 CANManager::CANManager()
 {
-    socketFD = -1;
-}
-
-bool CANManager::initialize(
-    const std::string& interfaceName
-)
-{
-    struct sockaddr_can addr;
-    struct ifreq ifr;
-
-    socketFD = socket(
-        PF_CAN,
-        SOCK_RAW,
-        CAN_RAW
-    );
+    socketFD =
+        socket(
+            PF_CAN,
+            SOCK_RAW,
+            CAN_RAW
+        );
 
     if (socketFD < 0)
     {
-        std::cerr
+        std::cout
             << "Failed to create CAN socket"
             << std::endl;
 
-        return false;
+        return;
     }
 
-    int enableLoopback = 1;
+    struct ifreq interfaceRequest;
 
-    setsockopt(
-        socketFD,
-        SOL_CAN_RAW,
-        CAN_RAW_RECV_OWN_MSGS,
-        &enableLoopback,
-        sizeof(enableLoopback)
+    std::strcpy(
+        interfaceRequest.ifr_name,
+        "vcan0"
     );
 
-    strcpy(
-        ifr.ifr_name,
-        interfaceName.c_str()
-    );
-
-    ioctl(
-        socketFD,
-        SIOCGIFINDEX,
-        &ifr
-    );
-
-    addr.can_family = AF_CAN;
-    addr.can_ifindex = ifr.ifr_ifindex;
-
-    if (bind(
+    if (
+        ioctl(
             socketFD,
-            (struct sockaddr *)&addr,
-            sizeof(addr)
-        ) < 0)
+            SIOCGIFINDEX,
+            &interfaceRequest
+        ) < 0
+    )
     {
-        std::cerr
+        std::cout
+            << "Failed to get interface index"
+            << std::endl;
+
+        return;
+    }
+
+    struct sockaddr_can address;
+
+    address.can_family =
+        AF_CAN;
+
+    address.can_ifindex =
+        interfaceRequest.ifr_ifindex;
+
+    if (
+        bind(
+            socketFD,
+            (struct sockaddr*)&address,
+            sizeof(address)
+        ) < 0
+    )
+    {
+        std::cout
             << "Failed to bind CAN socket"
             << std::endl;
 
-        return false;
+        return;
     }
 
     std::cout
-        << "CAN Interface Initialized: "
-        << interfaceName
+        << "CAN Interface Initialized: vcan0"
         << std::endl;
-
-    return true;
 }
 
 bool CANManager::sendMessage(
-    int canId,
-    const std::string& data
+    int canID,
+    const std::string& message
 )
 {
     struct can_frame frame;
 
-    frame.can_id = canId;
-    frame.can_dlc = data.size();
+    frame.can_id =
+        canID;
 
-    memcpy(
+    frame.can_dlc =
+        message.length();
+
+    std::memcpy(
         frame.data,
-        data.c_str(),
-        data.size()
+        message.c_str(),
+        frame.can_dlc
     );
 
-    int bytesSent = write(
-        socketFD,
-        &frame,
-        sizeof(frame)
-    );
+    int bytesSent =
+        write(
+            socketFD,
+            &frame,
+            sizeof(frame)
+        );
 
-    if (bytesSent != sizeof(frame))
+    if (bytesSent > 0)
     {
-        std::cerr
+        std::cout
+            << "CAN Message Sent -> ID: "
+            << std::hex
+            << canID
+            << " Data: "
+            << message
+            << std::endl;
+
+        return true;
+    }
+    else
+    {
+        std::cout
             << "Failed to send CAN message"
             << std::endl;
 
         return false;
     }
-
-    std::cout
-        << "CAN Message Sent -> ID: "
-        << std::hex
-        << canId
-        << " Data: "
-        << data
-        << std::endl;
-
-    return true;
 }
 
 void CANManager::receiveMessages()
 {
     struct can_frame frame;
 
+    ThermalAgent thermalAgent;
+
+    MotorAgent motorAgent;
+
+    VehicleOrchestrator orchestrator;
+
     while (true)
     {
-        int bytesRead = read(
-            socketFD,
-            &frame,
-            sizeof(frame)
-        );
+        int bytesRead =
+            read(
+                socketFD,
+                &frame,
+                sizeof(frame)
+            );
 
         if (bytesRead > 0)
         {
+            std::string receivedData = "";
+
+            for (
+                int i = 0;
+                i < frame.can_dlc;
+                i++
+            )
+            {
+                receivedData +=
+                    frame.data[i];
+            }
+
             std::cout
                 << "Received CAN Message -> ID: "
                 << std::hex
                 << frame.can_id
-                << " Data: ";
-
-            std::string receivedData;
-
-            for (int i = 0; i < frame.can_dlc; i++)
-            {
-                receivedData += frame.data[i];
-            }
-
-            std::cout
+                << " Data: "
                 << receivedData
                 << std::endl;
 
-            size_t commaPos =
-                receivedData.find(",");
-
-            if (commaPos != std::string::npos)
+            if (frame.can_id == 0x200)
             {
-                std::string temp =
-                    receivedData.substr(
-                        0,
-                        commaPos
+                int temperature =
+                    std::stoi(
+                        receivedData.substr(
+                            0,
+                            receivedData.find(",")
+                        )
                     );
 
-                int batteryTemp =
-                    std::stoi(temp);
-
-                ThermalAgent thermalAgent;
-
                 thermalAgent.analyzeTemperature(
-                    batteryTemp
+                    temperature
+                );
+
+                orchestrator.evaluateVehicleRisk(
+                    temperature,
+                    60,
+                    3000
+                );
+            }
+
+            else if (frame.can_id == 0x300)
+            {
+                int motorTemperature =
+                    std::stoi(
+                        receivedData.substr(
+                            0,
+                            receivedData.find(",")
+                        )
+                    );
+
+                motorAgent.analyzeMotorTelemetry(
+                    motorTemperature
                 );
             }
         }

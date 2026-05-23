@@ -6,16 +6,16 @@
 class CANManager
 {
 private:
+
     int socketFD;
 
 public:
+
     CANManager();
 
-    bool initialize(const std::string& interfaceName);
-
     bool sendMessage(
-        int canId,
-        const std::string& data
+        int canID,
+        const std::string& message
     );
 
     void receiveMessages();
