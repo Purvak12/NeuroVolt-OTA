@@ -6,3 +6,6 @@ venv/
 telemetry.json
 telemetry.txt
 events.log
+ota_history.log
+ota_request.json
+logs/*.log
