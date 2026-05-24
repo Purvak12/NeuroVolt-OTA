@@ -201,6 +201,30 @@ src/agents/VehicleOrchestrator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/agents/VehicleOrchestrator.cpp.s
 .PHONY : src/agents/VehicleOrchestrator.cpp.s
 
+src/analytics/RiskScorer.o: src/analytics/RiskScorer.cpp.o
+.PHONY : src/analytics/RiskScorer.o
+
+# target to build an object file
+src/analytics/RiskScorer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/analytics/RiskScorer.cpp.o
+.PHONY : src/analytics/RiskScorer.cpp.o
+
+src/analytics/RiskScorer.i: src/analytics/RiskScorer.cpp.i
+.PHONY : src/analytics/RiskScorer.i
+
+# target to preprocess a source file
+src/analytics/RiskScorer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/analytics/RiskScorer.cpp.i
+.PHONY : src/analytics/RiskScorer.cpp.i
+
+src/analytics/RiskScorer.s: src/analytics/RiskScorer.cpp.s
+.PHONY : src/analytics/RiskScorer.s
+
+# target to generate assembly for a file
+src/analytics/RiskScorer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/analytics/RiskScorer.cpp.s
+.PHONY : src/analytics/RiskScorer.cpp.s
+
 src/analytics/TelemetryLogger.o: src/analytics/TelemetryLogger.cpp.o
 .PHONY : src/analytics/TelemetryLogger.o
 
@@ -369,6 +393,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/ota/FirmwarePackage.o: src/ota/FirmwarePackage.cpp.o
+.PHONY : src/ota/FirmwarePackage.o
+
+# target to build an object file
+src/ota/FirmwarePackage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/FirmwarePackage.cpp.o
+.PHONY : src/ota/FirmwarePackage.cpp.o
+
+src/ota/FirmwarePackage.i: src/ota/FirmwarePackage.cpp.i
+.PHONY : src/ota/FirmwarePackage.i
+
+# target to preprocess a source file
+src/ota/FirmwarePackage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/FirmwarePackage.cpp.i
+.PHONY : src/ota/FirmwarePackage.cpp.i
+
+src/ota/FirmwarePackage.s: src/ota/FirmwarePackage.cpp.s
+.PHONY : src/ota/FirmwarePackage.s
+
+# target to generate assembly for a file
+src/ota/FirmwarePackage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/FirmwarePackage.cpp.s
+.PHONY : src/ota/FirmwarePackage.cpp.s
+
+src/ota/OTAHistoryLogger.o: src/ota/OTAHistoryLogger.cpp.o
+.PHONY : src/ota/OTAHistoryLogger.o
+
+# target to build an object file
+src/ota/OTAHistoryLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTAHistoryLogger.cpp.o
+.PHONY : src/ota/OTAHistoryLogger.cpp.o
+
+src/ota/OTAHistoryLogger.i: src/ota/OTAHistoryLogger.cpp.i
+.PHONY : src/ota/OTAHistoryLogger.i
+
+# target to preprocess a source file
+src/ota/OTAHistoryLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTAHistoryLogger.cpp.i
+.PHONY : src/ota/OTAHistoryLogger.cpp.i
+
+src/ota/OTAHistoryLogger.s: src/ota/OTAHistoryLogger.cpp.s
+.PHONY : src/ota/OTAHistoryLogger.s
+
+# target to generate assembly for a file
+src/ota/OTAHistoryLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTAHistoryLogger.cpp.s
+.PHONY : src/ota/OTAHistoryLogger.cpp.s
+
 src/ota/OTAManager.o: src/ota/OTAManager.cpp.o
 .PHONY : src/ota/OTAManager.o
 
@@ -393,6 +465,54 @@ src/ota/OTAManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTAManager.cpp.s
 .PHONY : src/ota/OTAManager.cpp.s
 
+src/ota/OTARequestHandler.o: src/ota/OTARequestHandler.cpp.o
+.PHONY : src/ota/OTARequestHandler.o
+
+# target to build an object file
+src/ota/OTARequestHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTARequestHandler.cpp.o
+.PHONY : src/ota/OTARequestHandler.cpp.o
+
+src/ota/OTARequestHandler.i: src/ota/OTARequestHandler.cpp.i
+.PHONY : src/ota/OTARequestHandler.i
+
+# target to preprocess a source file
+src/ota/OTARequestHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTARequestHandler.cpp.i
+.PHONY : src/ota/OTARequestHandler.cpp.i
+
+src/ota/OTARequestHandler.s: src/ota/OTARequestHandler.cpp.s
+.PHONY : src/ota/OTARequestHandler.s
+
+# target to generate assembly for a file
+src/ota/OTARequestHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTARequestHandler.cpp.s
+.PHONY : src/ota/OTARequestHandler.cpp.s
+
+src/ota/OTASafetyValidator.o: src/ota/OTASafetyValidator.cpp.o
+.PHONY : src/ota/OTASafetyValidator.o
+
+# target to build an object file
+src/ota/OTASafetyValidator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTASafetyValidator.cpp.o
+.PHONY : src/ota/OTASafetyValidator.cpp.o
+
+src/ota/OTASafetyValidator.i: src/ota/OTASafetyValidator.cpp.i
+.PHONY : src/ota/OTASafetyValidator.i
+
+# target to preprocess a source file
+src/ota/OTASafetyValidator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTASafetyValidator.cpp.i
+.PHONY : src/ota/OTASafetyValidator.cpp.i
+
+src/ota/OTASafetyValidator.s: src/ota/OTASafetyValidator.cpp.s
+.PHONY : src/ota/OTASafetyValidator.s
+
+# target to generate assembly for a file
+src/ota/OTASafetyValidator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NeuroVoltOTA.dir/build.make CMakeFiles/NeuroVoltOTA.dir/src/ota/OTASafetyValidator.cpp.s
+.PHONY : src/ota/OTASafetyValidator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -411,6 +531,9 @@ help:
 	@echo "... src/agents/VehicleOrchestrator.o"
 	@echo "... src/agents/VehicleOrchestrator.i"
 	@echo "... src/agents/VehicleOrchestrator.s"
+	@echo "... src/analytics/RiskScorer.o"
+	@echo "... src/analytics/RiskScorer.i"
+	@echo "... src/analytics/RiskScorer.s"
 	@echo "... src/analytics/TelemetryLogger.o"
 	@echo "... src/analytics/TelemetryLogger.i"
 	@echo "... src/analytics/TelemetryLogger.s"
@@ -432,9 +555,21 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/ota/FirmwarePackage.o"
+	@echo "... src/ota/FirmwarePackage.i"
+	@echo "... src/ota/FirmwarePackage.s"
+	@echo "... src/ota/OTAHistoryLogger.o"
+	@echo "... src/ota/OTAHistoryLogger.i"
+	@echo "... src/ota/OTAHistoryLogger.s"
 	@echo "... src/ota/OTAManager.o"
 	@echo "... src/ota/OTAManager.i"
 	@echo "... src/ota/OTAManager.s"
+	@echo "... src/ota/OTARequestHandler.o"
+	@echo "... src/ota/OTARequestHandler.i"
+	@echo "... src/ota/OTARequestHandler.s"
+	@echo "... src/ota/OTASafetyValidator.o"
+	@echo "... src/ota/OTASafetyValidator.i"
+	@echo "... src/ota/OTASafetyValidator.s"
 .PHONY : help
 
 

@@ -13,6 +13,8 @@
         href="style.css"
     />
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -50,11 +52,89 @@
             </div>
 
             <div class="card">
+                <h2>Risk Score</h2>
+
+                <p id="riskScore">
+                    Loading...
+                </p>
+            </div>
+
+            <div class="card">
                 <h2>Vehicle Status</h2>
 
                 <p id="vehicleStatus">
                     Loading...
                 </p>
+            </div>
+
+            <div class="card">
+                <h2>OTA Status</h2>
+
+                <p id="otaStatus">
+                    Loading...
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Firmware Version</h2>
+
+                <p id="firmwareVersion">
+                    Loading...
+                </p>
+            </div>
+
+        </div>
+
+        <div class="ota-control">
+
+            <button onclick="startOTAUpdate()">
+                Start OTA Update
+            </button>
+
+            <p id="otaRequestStatus">
+                OTA request not started
+            </p>
+
+        </div>
+
+        <div class="chart-container">
+
+            <canvas id="telemetryChart"></canvas>
+
+        </div>
+
+        <div class="events-panel">
+
+            <h2>
+                Firmware Package Rules
+            </h2>
+
+            <div id="firmwarePackageDetails">
+                Loading firmware package...
+            </div>
+
+        </div>
+
+        <div class="events-panel">
+
+            <h2>
+                Recent Vehicle Events
+            </h2>
+
+            <div id="eventsList">
+                Loading events...
+            </div>
+
+        </div>
+
+        <div class="events-panel">
+
+            <h2>
+                OTA Decision History
+            </h2>
+
+            <div id="otaHistoryList">
+                Loading OTA history...
             </div>
 
         </div>

@@ -1,6 +1,9 @@
 #include "../../include/analytics/TelemetryLogger.hpp"
+#include "../../include/analytics/RiskScorer.hpp"
+#include "../../include/ota/OTAManager.hpp"
 
 #include <fstream>
+#include <string>
 
 void TelemetryLogger::logTelemetry(
     int batteryTemp,
@@ -8,28 +11,34 @@ void TelemetryLogger::logTelemetry(
     int motorRPM
 )
 {
+    RiskScorer riskScorer;
+
+    int riskScore =
+        riskScorer.calculateRiskScore(
+            batteryTemp,
+            motorTemp,
+            motorRPM
+        );
+
     std::string vehicleStatus =
         "Stable";
 
-    if (
-        batteryTemp > 42
-        ||
-        motorTemp > 70
-    )
+    if (riskScore >= 70)
     {
         vehicleStatus =
             "Critical";
     }
-
-    else if (
-        batteryTemp > 38
-        ||
-        motorTemp > 60
-    )
+    else if (riskScore >= 40)
     {
         vehicleStatus =
             "Warning";
     }
+
+    std::string otaStatus =
+        OTAManager::getLastOTAStatus();
+
+    std::string firmwareVersion =
+        OTAManager::getCurrentFirmwareVersion();
 
     std::ofstream file(
         "../telemetry.json"
@@ -54,9 +63,26 @@ void TelemetryLogger::logTelemetry(
         << ",\n";
 
     file
+        << "  \"riskScore\": "
+        << riskScore
+        << ",\n";
+
+    file
         << "  \"vehicleStatus\": "
         << "\""
         << vehicleStatus
+        << "\",\n";
+
+    file
+        << "  \"otaStatus\": "
+        << "\""
+        << otaStatus
+        << "\",\n";
+
+    file
+        << "  \"firmwareVersion\": "
+        << "\""
+        << firmwareVersion
         << "\"\n";
 
     file

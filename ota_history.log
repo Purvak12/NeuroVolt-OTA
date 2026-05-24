@@ -1,0 +1,7 @@
+[Sun May 24 17:23:17 2026] OTA_BLOCKED_OR_DELAYED | Risk: 100 | BatteryTemp: 45C | MotorTemp: 76C | MotorRPM: 5677 | SOC: 92% | Firmware: 1.0.0
+[Sun May 24 17:23:29 2026] OTA_UPDATED_SUCCESSFULLY | Risk: 20 | BatteryTemp: 42C | MotorTemp: 54C | MotorRPM: 3363 | SOC: 79% | Firmware: 1.1.0
+[Sun May 24 17:23:38 2026] OTA_UPDATED_SUCCESSFULLY | Risk: 35 | BatteryTemp: 40C | MotorTemp: 58C | MotorRPM: 4737 | SOC: 67% | Firmware: 1.1.0
+[Sun May 24 17:34:33 2026] OTA_UPDATED_SUCCESSFULLY | Risk: 35 | BatteryTemp: 41C | MotorTemp: 70C | MotorRPM: 3786 | SOC: 74% | Firmware: 1.1.0
+[Sun May 24 17:35:36 2026] OTA_UPDATED_SUCCESSFULLY | Risk: 20 | BatteryTemp: 42C | MotorTemp: 51C | MotorRPM: 2735 | SOC: 77% | Firmware: 1.1.0
+[Sun May 24 18:11:32 2026] OTA_UPDATED_SUCCESSFULLY | Risk: 35 | BatteryTemp: 40C | MotorTemp: 56C | MotorRPM: 4785 | SOC: 62% | Firmware: 1.2.0
+[Sun May 24 18:44:00 2026] OTA_UPDATED_SUCCESSFULLY | Risk: 35 | BatteryTemp: 40C | MotorTemp: 68C | MotorRPM: 2676 | SOC: 88% | Firmware: 1.2.0

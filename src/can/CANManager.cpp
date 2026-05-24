@@ -4,19 +4,26 @@
 #include "../../include/agents/MotorAgent.hpp"
 #include "../../include/agents/VehicleOrchestrator.hpp"
 
+#include "../../include/ota/OTAManager.hpp"
+#include "../../include/ota/OTARequestHandler.hpp"
+
 #include <iostream>
 #include <cstring>
+#include <string>
 
 #include <unistd.h>
-
 #include <sys/socket.h>
 
 #include <linux/can.h>
 #include <linux/can/raw.h>
 
 #include <net/if.h>
-
 #include <sys/ioctl.h>
+
+int globalBatteryTemp = 0;
+int globalSOC = 80;
+int globalMotorRPM = 0;
+int globalMotorTemp = 0;
 
 CANManager::CANManager()
 {
@@ -35,6 +42,16 @@ CANManager::CANManager()
 
         return;
     }
+
+    int enableLoopback = 1;
+
+    setsockopt(
+        socketFD,
+        SOL_CAN_RAW,
+        CAN_RAW_RECV_OWN_MSGS,
+        &enableLoopback,
+        sizeof(enableLoopback)
+    );
 
     struct ifreq interfaceRequest;
 
@@ -124,14 +141,12 @@ bool CANManager::sendMessage(
 
         return true;
     }
-    else
-    {
-        std::cout
-            << "Failed to send CAN message"
-            << std::endl;
 
-        return false;
-    }
+    std::cout
+        << "Failed to send CAN message"
+        << std::endl;
+
+    return false;
 }
 
 void CANManager::receiveMessages()
@@ -139,10 +154,10 @@ void CANManager::receiveMessages()
     struct can_frame frame;
 
     ThermalAgent thermalAgent;
-
     MotorAgent motorAgent;
-
     VehicleOrchestrator orchestrator;
+    OTAManager otaManager;
+    OTARequestHandler otaRequestHandler;
 
     while (true)
     {
@@ -175,39 +190,76 @@ void CANManager::receiveMessages()
                 << receivedData
                 << std::endl;
 
+            size_t commaPos =
+                receivedData.find(",");
+
+            if (commaPos == std::string::npos)
+            {
+                continue;
+            }
+
+            int value1 =
+                std::stoi(
+                    receivedData.substr(
+                        0,
+                        commaPos
+                    )
+                );
+
+            int value2 =
+                std::stoi(
+                    receivedData.substr(
+                        commaPos + 1
+                    )
+                );
+
             if (frame.can_id == 0x200)
             {
-                int temperature =
-                    std::stoi(
-                        receivedData.substr(
-                            0,
-                            receivedData.find(",")
-                        )
-                    );
+                globalBatteryTemp =
+                    value1;
+
+                globalSOC =
+                    value2;
 
                 thermalAgent.analyzeTemperature(
-                    temperature
+                    globalBatteryTemp
                 );
 
-                orchestrator.evaluateVehicleRisk(
-                    temperature,
-                    60,
-                    3000
-                );
+                if (
+                    otaRequestHandler.isOTARequested()
+                )
+                {
+                    std::cout
+                        << "[OTA REQUEST] Update request received from dashboard"
+                        << std::endl;
+
+                    otaManager.validateAndDeployUpdate(
+                        globalBatteryTemp,
+                        globalMotorTemp,
+                        globalMotorRPM,
+                        globalSOC
+                    );
+
+                    otaRequestHandler.clearOTARequest();
+                }
             }
 
             else if (frame.can_id == 0x300)
             {
-                int motorTemperature =
-                    std::stoi(
-                        receivedData.substr(
-                            0,
-                            receivedData.find(",")
-                        )
-                    );
+                globalMotorRPM =
+                    value1;
+
+                globalMotorTemp =
+                    value2;
 
                 motorAgent.analyzeMotorTelemetry(
-                    motorTemperature
+                    globalMotorTemp
+                );
+
+                orchestrator.evaluateVehicleRisk(
+                    globalBatteryTemp,
+                    globalMotorTemp,
+                    globalMotorRPM
                 );
             }
         }

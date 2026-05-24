@@ -22,8 +22,13 @@ add_executable(
 
     src/analytics/TelemetryStore.cpp
     src/analytics/TelemetryLogger.cpp
+    src/analytics/RiskScorer.cpp
 
     src/events/EventManager.cpp
 
     src/ota/OTAManager.cpp
+    src/ota/OTASafetyValidator.cpp
+    src/ota/OTARequestHandler.cpp
+    src/ota/OTAHistoryLogger.cpp
+    src/ota/FirmwarePackage.cpp
 )

@@ -6,16 +6,29 @@
 class OTAManager
 {
 private:
-    std::string currentFirmwareVersion;
+    static std::string currentFirmwareVersion;
+
+    static std::string lastOTAStatus;
 
 public:
     OTAManager();
 
     void deployUpdate(
-        const std::string& newVersion
+        const std::string& targetVersion
+    );
+
+    void validateAndDeployUpdate(
+        int batteryTemp,
+        int motorTemp,
+        int motorRPM,
+        int stateOfCharge
     );
 
     void rollbackFirmware();
+
+    static std::string getCurrentFirmwareVersion();
+
+    static std::string getLastOTAStatus();
 };
 
 #endif
