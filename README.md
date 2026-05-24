@@ -71,8 +71,16 @@ This project solves that problem by creating a simulated EV OTA safety platform 
 
 ---
 
-## System Architecture
+ ## Documentation
 
+- [Architecture Documentation](docs/architecture.md)
+- [API Documentation](docs/api_documentation.md)
+- [Demo Flow](docs/demo_flow.md)
+- [Patent-Oriented Concept Note](docs/patent_note.md)
+
+
+## System Architecture
+ 
 ```text
 BMS ECU Simulator
         |
@@ -124,3 +132,17 @@ OTA is allowed, delayed, blocked, or rolled back
         |
         v
 Decision is logged in OTA history
+
+
+## Dashboard Preview
+
+![Dashboard](screenshots/dashboard_screenshot.png)
+
+## OTA Decision History and Other features
+
+![OTA History](screenshots/LIVE_GRAPH.png)
+![OTA History](screenshots/OTA_UPDATE_BUTTON.png)
+
+## Firmware Package Rules
+
+![Firmware Rules](screenshots/TELEMATERY_DATA.png)
